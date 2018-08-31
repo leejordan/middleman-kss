@@ -1,4 +1,4 @@
-@import '../../scss/core/variables';
+@import '../../source/stylesheets/core/variables';
 
 $padding-header: 10px;
 $padding-page: 30px;
@@ -34,7 +34,7 @@ code {
     width: 100%;
     min-height: 50px;
     padding: $padding-header $padding-page;
-    background: $colour-white;
+    background: $colour-ui-card;
 
     @media only screen and (min-width: $breakpoint-mobile) {
         display: none;
@@ -177,7 +177,6 @@ code {
         padding: 5px 5px 5px $padding-page;
 
         .kss-nav__ref {
-            display: inline-block;
             vertical-align: middle;
             padding-right: 5px; }
 
@@ -187,8 +186,12 @@ code {
             transition: transform .3s;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
+            text-decoration: none;
+
             .kss-nav__name {
+                text-decoration: none;
                 -webkit-transform: translateX(6px);
                 transform: translateX(6px);
             }
@@ -249,14 +252,20 @@ code {
 }
 
 .kss-section {
-    padding-top: ($padding-page * 2);
+    padding-top: ($padding-page * 3);
+    margin-top: -($padding-page * 3);
     margin-bottom: $padding-page;
 
-    &:first-of-type {
+    @media only screen and (min-width: $breakpoint-mobile) {
         padding-top: $padding-page;
+        margin-top: -$padding-page;
     }
 }
 
+header.kss-section {
+    margin-top: 0;
+    padding-top: 0;
+}
 
 .kss-parameters {
     margin: 0 0 1em;
@@ -297,6 +306,12 @@ code {
 
 .kss-section__description {
     margin-bottom: $section-spacing-base;
+}
+
+.kss-markup {
+    pre {
+        margin-bottom: 0 !important;
+    }
 }
 
 .kss-section__source {

@@ -1,8 +1,8 @@
 {
-  "title": "middleman-kss",
+  "title": "Styleguide",
   "source": "source/stylesheets",
   "destination": "styleguide/",
-  "homepage": "../README.md",
+  "homepage": "../../styleguide-template/introduction.md",
   "builder": "styleguide-template/",
   "css": [
     "css/site.css"

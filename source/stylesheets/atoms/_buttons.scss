@@ -10,7 +10,7 @@
 // Styles applied by default to all `button` elements and `type="button"` elements.
 // Can also be applied to other elements such as links with class `button`.
 //
-// ```
+// ``` markup
 // <button>a button element</button>
 // <input type="button" value="an input of type button">
 // <a href="#0" class="button">a link that looks like a button</a>
@@ -19,7 +19,7 @@
 // Disabled states  on `button` and `input` elements can be set with the `disabled` attribute.
 // Links, however, do not have a disabled property so you should use the class `is-disabled`
 //
-// ```
+// ``` markup
 // <button disabled>a button element</button>
 // <input disabled type="button" value="an input of type button">
 // <a href="#0" class="button is-disabled">a link that looks like a button</a>
@@ -59,6 +59,7 @@ button,
 
     &:focus {
         outline: none;
+        text-decoration: none;
     }
 
     &:disabled,

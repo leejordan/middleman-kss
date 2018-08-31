@@ -21,7 +21,6 @@ a {
     }
 
     &:focus {
-        outline: none;
-        box-shadow: 0 0 0 1px $colour-link;
+        text-decoration: underline;
     }
 }
