@@ -1,0 +1,114 @@
+// Colours
+//
+// The colour palette for web.
+//
+// Styleguide Core.Colours
+
+
+// Utility Colours
+
+$colour-null: rgba(0, 0, 0, 0);
+$colour-black: #000;
+$colour-white: #fff;
+
+
+// Default Colours
+//
+// The default colours for certain elements.
+//
+// $colour-body - #fff; body background colour
+// $colour-text - #222; text colour
+// $colour-text-muted - #888; muted text colour
+// $colour-link - #06c760; link colour
+//
+// Styleguide Core.Colours.Default
+
+$colour-body: #fff;
+$colour-text: #222;
+$colour-text-muted: #888;
+$colour-link: #06c760;
+
+
+// Brand Colours
+//
+// The primary colors for branding.
+//
+// $colour-brand-primary - #06c760; Primary
+// $colour-brand-secondary - #28ad66; Secondary
+//
+// Styleguide Core.Colours.Brand
+
+$colour-brand-primary: #06c760;
+$colour-brand-secondary: #28ad66;
+
+
+// Feedback Colours
+//
+// Colors for signifying certain states.
+//
+// $colour-state-success - #3ac706; Success
+// $colour-state-warning - #c7063a; Warning
+//
+// Styleguide Core.Colours.Feedback
+
+$colour-state-success: #3ac706;
+$colour-state-warning: #c7063a;
+
+
+// UI Colours
+//
+// Colors for various UI elements such as cards
+
+$colour-ui-border: #ccc;
+$colour-ui-button: #e9e9e9;
+$colour-ui-card:  #f3f3f3;
+
+
+// Typography
+
+$font-family-base: 'Catamaran', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-base: 18px;
+$font-size-mobile: 16px;
+$font-weight-light: 200;
+$font-weight-base: 400;
+$font-weight-strong: 700;
+$line-height-base: 1.5;
+
+
+
+// Breakpoints
+
+$breakpoint-mobile: 767px;
+
+
+// Links
+
+$link-decoration: none;
+$link-hover-colour: darken($colour-link, 10%);
+
+
+// Borders
+
+$border-default: 1px solid $colour-ui-border;
+$border-radius-base: 0;
+
+
+// Shadows
+
+$shadow-form-inset: inset 0 1px 1px rgba($colour-black, .075);
+$shadow-form-inset-focus: inset 0 1px 1px transparent;
+$shadow-form-focus: 0 0 0 1px $colour-text-muted;
+
+
+// Dimensions
+
+$section-spacing-small: .5rem;
+$section-spacing-base: 1rem;
+$section-spacing-lg: 2rem;
+
+
+// Cards
+$card-padding: .75rem;
+
+
+

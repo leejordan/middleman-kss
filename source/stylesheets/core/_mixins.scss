@@ -1,0 +1,52 @@
+@mixin font-size($size: 1) {
+    font-size: ($font-size-base * $size);
+    font-size: #{$size}rem;
+}
+
+@mixin generate-button(
+        $colour-txt: $colour-text,
+        $colour-bg: $colour-ui-button,
+        $colour-bg-hover: darken($colour-bg, 3%),
+        $colour-focus: $colour-text,
+        $colour-icon: $colour-link
+    ) {
+
+    background-color: $colour-bg;
+    color: $colour-txt;
+
+    svg {
+        path {
+            fill: $colour-icon;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        color: $colour-txt;
+        background-color: $colour-bg-hover;
+    }
+
+    &:focus {
+        box-shadow: inset 0 0 0 3px $colour-focus;
+    }
+
+    &:disabled,
+    .disabled {
+        background-color: rgba($colour-bg, .5);
+    }
+}
+
+@mixin inner-content-fix() {
+    > :first-child {
+        margin-top: 0;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin list-unstyled() {
+    list-style-type: none;
+    padding-left: 0;
+}

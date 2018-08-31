@@ -1,0 +1,228 @@
+// Forms
+//
+// Inputs, textareas, and selects. The atomic parts of forms.
+//
+// Styleguide Atoms.Forms
+
+
+// Label
+//
+// Markup:
+// <label for="name">your name</label>
+//
+// Styleguide Atoms.Forms.Label
+
+label,
+legend {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: ($font-size-base * .31);
+    color: $colour-text;
+}
+
+
+// Input
+//
+// Styles applied by default to the following elements:
+//
+// ```
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+// ```
+//
+// Please note that `display: block;` and `width: 100%;` are set by default so these
+// elements always take up the full width of their containing element.
+//
+// Markup:
+// <input id="name" type="text" name="name" placeholder="default text input">
+// <input id="password" type="password" name="password" placeholder="default password input">
+// <input type="button" name="search" value="default input type button">
+//
+// Styleguide Atoms.Forms.Input
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: $section-spacing-base;
+    padding: $section-spacing-small $section-spacing-base;
+    @include font-size(1);
+    line-height: $line-height-base;
+    color: $colour-text;
+    background-color: $colour-white;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: $border-default;
+    border-radius: $border-radius-base;
+    box-shadow: $shadow-form-inset;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+    &:hover,
+    &:focus {
+        color: $colour-text;
+        background-color: rgba($colour-text, .05);
+    }
+
+    &:focus {
+        outline: none;
+        background-color: $colour-white;
+        border-color: $colour-text-muted;
+        box-shadow: $shadow-form-inset-focus, $shadow-form-focus;
+    }
+}
+
+
+// Select
+//
+// We're adding some styling to these but different browsers will ignore some or all of these styles.
+//
+// Please note that `display: block;` and `width: 100%;` are set by default so these
+// elements always take up the full width of their containing element.
+//
+// Markup:
+// <select id="option" name="option">
+//     <option value="1">option 1</option>
+//     <option value="2">option 2</option>
+//     <option value="3">option 3</option>
+// </select>
+// <select multiple size="6">
+//     <option value="1">option 1</option>
+//     <option value="2">option 2</option>
+//     <option value="3">option 3</option>
+//     <option value="4">option 4</option>
+//     <option value="5">option 5</option>
+//     <option value="6">option 6</option>
+// </select>
+//
+// Styleguide Atoms.Forms.Select
+
+select[multiple],
+select[size] {
+    padding: $section-spacing-small;
+
+    option {
+        padding: $section-spacing-small;
+        border-radius: $border-radius-base;
+        color: $colour-text;
+
+        &:hover {
+            background-color: rgba($colour-text, .1);
+        }
+
+        &:focus,
+        &:checked {
+            color: $colour-white;
+            background-color: $colour-state-success;
+            background-image: linear-gradient(0deg, $colour-state-success, $colour-state-success);
+        }
+    }
+}
+
+// Textarea
+//
+// We set a minimum height and only allow vertical resizing
+//
+// Please note that `display: block;` and `width: 100%;` are set by default so these
+// elements always take up the full width of their containing element.
+//
+// Markup:
+// <textarea id="comment" name="comment" placeholder="default textarea"></textarea>
+//
+// Styleguide Atoms.Forms.Textarea
+
+textarea {
+    resize: vertical; // Only allow vertical resizing of texareas
+    min-height: 10em;
+}
+
+
+// Radio
+//
+// Styles applied by default to radio type inputs.
+//
+// **Please note** that `display: block;` is set by default on labels related to radio
+// inputs so they always take up the full width of their containing element.
+// The label must be directly adjacent to the input in order for the associated styles to work.
+//
+// Markup:
+// <input type="radio" name="radio" id="radio1" value="1" />
+// <label for="radio1"> radio 1</label>
+// <input type="radio" name="radio" id="radio2" value="2" />
+// <label for="radio2"> radio 2</label>
+//
+// Styleguide Atoms.Forms.Radio
+
+// Checkbox
+//
+// Styles applied by default to checkbox type inputs.
+//
+// **Please note** that `display: block;` is set by default on labels related to checkbox
+// inputs so they always take up the full width of their containing element.
+// The label must be directly adjacent to the input in order for the associated styles to work.
+//
+// Markup:
+// <input type="checkbox" name="checkbox" id="checkbox1" value="1" />
+// <label for="checkbox1"> checkbox 1</label>
+// <input type="checkbox" name="checkbox" id="checkbox2" value="2" />
+// <label for="checkbox2"> checkbox 2</label>
+//
+// Styleguide Atoms.Forms.Checkbox
+
+input[type="radio"],
+input[type="checkbox"] {
+    float: left;
+    margin-top: .75em;
+    margin-left: 1em;
+
+    &:focus {
+        outline: 3px solid $colour-text;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+
+    + label {
+        display: block;
+        margin-bottom: ($font-size-base * .31); // same size as default white space between inline elements
+        padding: .5em 1em .5em 2.5em;
+        border-radius: $border-radius-base;
+
+        &:hover {
+            background-color: rgba($colour-text, .1);
+        }
+    }
+
+    &:checked {
+        + label {
+            color: $colour-white;
+            background-color: $colour-state-success;
+        }
+    }
+}
+
+

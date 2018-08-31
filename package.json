@@ -1,0 +1,30 @@
+{
+  "name": "middleman-kss",
+  "version": "0.0.1",
+  "description": "Middleman static site with kss styleguide generator",
+  "main": "stylesheets.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leejordan/barebones.git"
+  },
+  "keywords": [
+    "barebones"
+  ],
+  "author": "@leejordan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leejordan/barebones/issues"
+  },
+  "homepage": "barebones",
+  "scripts": {
+    "build": "npm run build:min && npm run build:max",
+    "build:min": "node-sass-chokidar --precision 8 --output-style compressed scss/barebones.scss css/barebones.min.css",
+    "build:max": "node-sass-chokidar --precision 8 --output-style expanded scss/barebones.scss css/barebones.css",
+    "watch": "node-sass-chokidar --watch --recursive --precision 8 --output-style expanded scss/barebones.scss css/barebones.css",
+    "start": "./node_modules/.bin/http-server . -a localhost -c10"
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "^0.0.3",
+    "http-server": "^0.10.0"
+  }
+}

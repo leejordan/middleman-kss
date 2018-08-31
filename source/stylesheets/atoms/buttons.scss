@@ -1,0 +1,125 @@
+// Buttons
+//
+// Inputs, buttons, and links that look like buttons.
+//
+// Styleguide Atoms.Buttons
+
+
+// Default button
+//
+// Styles applied by default to all `button` elements and `type="button"` elements.
+// Can also be applied to other elements such as links with class `button`.
+//
+// ```
+// <button>a button element</button>
+// <input type="button" value="an input of type button">
+// <a href="#0" class="button">a link that looks like a button</a>
+// ```
+//
+// Disabled states  on `button` and `input` elements can be set with the `disabled` attribute.
+// Links, however, do not have a disabled property so you should use the class `is-disabled`
+//
+// ```
+// <button disabled>a button element</button>
+// <input disabled type="button" value="an input of type button">
+// <a href="#0" class="button is-disabled">a link that looks like a button</a>
+// ```
+//
+// :hover - hover state
+// :focus - focus state
+// :disabled - disabled state
+//
+// Markup:
+// <a href="#0" class="button {{ modifier_class }}">Filter results</a>
+//
+// Weight: -1
+//
+// Styleguide Atoms.Buttons.Default
+
+button,
+.button,
+[type="button"] {
+    transition: background-color .1s ease-out, box-shadow .2s ease-out;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin-bottom: ($font-size-base * .31); // same size as default white space between inline-block elements
+    padding: ($font-size-base / 2) ($font-size-base * 2);
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    letter-spacing: .02em;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    background-image: none;
+    border: 0;
+    border-radius: $border-radius-base;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled,
+    &.is-disabled {
+        text-decoration: line-through;
+        pointer-events: none;
+    }
+
+    @include generate-button();
+}
+
+
+// Primary button
+//
+// For when there is a single primary call to action that needs to stand out.
+//
+// :hover - hover state
+// :focus - focus state
+// :disabled - disabled state
+//
+// Markup:
+// <a href="#0" class="button button--primary {{ modifier_class }}">Sign up</a>
+//
+// Styleguide Atoms.Buttons.Primary
+
+.button--primary {
+    $arguments: (
+        'colour-txt': $colour-white,
+        'colour-bg': $colour-state-success,
+        'colour-focus': $colour-text,
+        'colour-icon': $colour-white
+    );
+
+    @include generate-button($arguments...);
+}
+
+
+// Danger button
+//
+// For a negative and potentially damaging action such as deleting something.
+// Please note if you're using a danger button you should also provide a
+// confirmation step, or an undo action.
+//
+// :hover - hover state
+// :focus - focus state
+// :disabled - disabled state
+//
+// Markup:
+// <a href="#0" class="button button--danger {{ modifier_class }}">Delete</a>
+//
+// Weight: 1
+//
+// Styleguide Atoms.Buttons.Danger
+
+.button--danger {
+    $arguments: (
+        'colour-txt': $colour-white,
+        'colour-bg': lighten($colour-state-warning, 5%),
+        'colour-focus': darken($colour-state-warning, 30%),
+        'colour-icon': $colour-white
+    );
+
+    @include generate-button($arguments...);
+}

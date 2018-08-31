@@ -1,0 +1,172 @@
+// Typography
+//
+// The standard appearance of typographic elements
+//
+// Styleguide Atoms.Typography
+
+
+// Headings
+//
+// Markup:
+// <h1>Heading 1</h1>
+// <h2>Heading 2</h2>
+// <h3>Heading 3</h3>
+// <h4>Heading 4</h4>
+// <h5>Heading 5</h5>
+// <h6>Heading 6</h6>
+//
+// Styleguide Atoms.Typography.Headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 1em 0 .5em;
+    font-family: $font-family-base;
+    font-weight: $font-weight-strong;
+    line-height: $line-height-base;
+    color: $colour-text;
+    letter-spacing: .02em;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+h1 {
+    @include font-size(1.8);
+}
+
+h2 {
+    @include font-size(1.4);
+}
+
+h3 {
+    @include font-size(1.3);
+}
+
+h4 {
+    @include font-size(1.2);
+}
+
+h5 {
+    @include font-size(1.1);
+}
+
+h6 {
+    @include font-size(1);
+}
+
+
+// Paragraph
+//
+// Markup:
+// <p>Paragraph</p>
+//
+// Styleguide Atoms.Typography.Paragraph
+
+p {
+    margin: 0 0 1em;
+}
+
+
+// Small
+//
+// Small text is smaller in relation to the font size of the parent element, rather than a fixed value.
+//
+// Markup:
+// <small>small text</small>
+//
+// Styleguide Atoms.Typography.Small
+
+small {
+    font-size: .85em;
+}
+
+
+// Bold
+//
+// Markup:
+// <strong>bold text</strong>
+//
+// Styleguide Atoms.Typography.Bold
+
+b,
+strong {
+    font-weight: $font-weight-strong;
+}
+
+
+// Emphasis
+//
+// Markup:
+// <em>emphasis text</em>
+//
+// Styleguide Atoms.Typography.Emphasis
+
+em {
+    font-style: italic;
+}
+
+
+// Blockquote
+//
+// Markup:
+// <blockquote>
+//     <p>
+//         Blockquote with optional footer.
+//     </p>
+//     <footer>
+//         Lee Jordan
+//     </footer>
+// </blockquote>
+//
+// Styleguide Atoms.Typography.Blockquote
+
+blockquote {
+    position: relative;
+    margin: 1em 0;
+    padding-left: 2.5em;
+    color: $colour-text-muted;
+    font-weight: $font-weight-light;
+
+    footer {
+        color: $colour-text;
+        font-weight: $font-weight-base;
+
+        &::before {
+            content: '- ';
+        }
+    }
+}
+
+// Horizontal rule
+//
+// Markup:
+// <hr>
+//
+// Styleguide Atoms.Typography.Horizontal rule
+
+hr {
+    height: 0;
+    margin: 1em 0;
+    border: 0;
+    border-top: $border-default;
+}
+
+// Muted text
+//
+// Useful for small print.
+//
+// Markup:
+// <p class="text-muted">Muted text</p>
+// <small class="text-muted">Small muted text</small>
+//
+// Styleguide Atoms.Typography.Muted
+
+.text-muted {
+    @extend %text-muted;
+}
+
